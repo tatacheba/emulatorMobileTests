@@ -1,12 +1,12 @@
 package drivers;
 
 import com.codeborne.selenide.WebDriverProvider;
+import config.Credentials;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
 import io.appium.java_client.remote.AutomationName;
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.WebDriver;
-import config.Credentials;
 
 import java.io.File;
 import java.io.IOException;
@@ -27,7 +27,6 @@ public class EmulatorMobileDriver implements WebDriverProvider {
         options.merge(capabilities);
         options.setAutomationName(AutomationName.ANDROID_UIAUTOMATOR2);
         options.setPlatformName(Credentials.configEmulator.platformName());
-//        options.setDeviceName("RFCR90ZMNQP");
         options.setDeviceName(Credentials.configEmulator.deviceName());
         options.setPlatformVersion(Credentials.configEmulator.platformVersion());
         options.setApp(app.getAbsolutePath());
