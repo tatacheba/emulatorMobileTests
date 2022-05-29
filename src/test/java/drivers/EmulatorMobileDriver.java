@@ -6,6 +6,7 @@ import io.appium.java_client.android.options.UiAutomator2Options;
 import io.appium.java_client.remote.AutomationName;
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.WebDriver;
+import config.Credentials;
 
 import java.io.File;
 import java.io.IOException;
@@ -25,10 +26,10 @@ public class EmulatorMobileDriver implements WebDriverProvider {
         UiAutomator2Options options = new UiAutomator2Options();
         options.merge(capabilities);
         options.setAutomationName(AutomationName.ANDROID_UIAUTOMATOR2);
-        options.setPlatformName("Android");
+        options.setPlatformName(Credentials.configEmulator.platformName());
 //        options.setDeviceName("RFCR90ZMNQP");
-        options.setDeviceName("Pixel_4_API_30");
-        options.setPlatformVersion("11.0");
+        options.setDeviceName(Credentials.configEmulator.deviceName());
+        options.setPlatformVersion(Credentials.configEmulator.platformVersion());
         options.setApp(app.getAbsolutePath());
         options.setLocale("en");
         options.setLanguage("en");
