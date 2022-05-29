@@ -1,7 +1,6 @@
 package drivers;
 
 import com.codeborne.selenide.WebDriverProvider;
-import config.OwnerConfig;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
 import io.appium.java_client.remote.AutomationName;
@@ -26,12 +25,13 @@ public class EmulatorMobileDriver implements WebDriverProvider {
         UiAutomator2Options options = new UiAutomator2Options();
         options.merge(capabilities);
         options.setAutomationName(AutomationName.ANDROID_UIAUTOMATOR2);
-        options.setPlatformName(OwnerConfig.getPlatformName());
-        options.setDeviceName(OwnerConfig.getDeviceName());
-        options.setPlatformVersion(OwnerConfig.getPlatformVersion());
+        options.setPlatformName("Android");
+//        options.setDeviceName("RFCR90ZMNQP");
+        options.setDeviceName("Pixel_4_API_30");
+        options.setPlatformVersion("11.0");
         options.setApp(app.getAbsolutePath());
-        options.setLocale(OwnerConfig.getLocale());
-        options.setLanguage(OwnerConfig.getLanguage());
+        options.setLocale("en");
+        options.setLanguage("en");
         options.setAppPackage("org.wikipedia.alpha");
         options.setAppActivity("org.wikipedia.main.MainActivity");
 
@@ -47,9 +47,9 @@ public class EmulatorMobileDriver implements WebDriverProvider {
     }
 
     private File getApp() {
-        String appPath = "src/test/resources/apk/app-alpha-universal-release.apk";//File is located resources/apk
+        String appPath = "src/test/resources/apk/app-alpha-universal-release.apk";
         String appUrl = "https://github.com/wikimedia/apps-android-wikipedia/" +
-                "releases/download/latest/app-alpha-universal-release.apk?raw=true";//File link for download
+                "releases/download/latest/app-alpha-universal-release.apk?raw=true";
 
         File app = new File(appPath);
         if (!app.exists()) {

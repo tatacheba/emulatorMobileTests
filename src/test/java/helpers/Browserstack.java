@@ -1,14 +1,16 @@
 package helpers;
 
-import config.OwnerConfig;
+import config.Credentials;
 
 import static io.restassured.RestAssured.given;
 
 public class Browserstack {
 
     public static String videoUrl(String sessionId) {
+
+
         return given()
-                .auth().basic(OwnerConfig.getUser(), OwnerConfig.getKey())
+                .auth().basic(Credentials.configBrowserstack.user(), Credentials.configBrowserstack.key())
                 .when()
                 .get("https://api-cloud.browserstack.com/app-automate/sessions/" + sessionId +".json")
                 .then()

@@ -1,7 +1,7 @@
 package drivers;
 
 import com.codeborne.selenide.WebDriverProvider;
-import config.OwnerConfig;
+import config.Credentials;
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.MutableCapabilities;
 import org.openqa.selenium.WebDriver;
@@ -12,30 +12,55 @@ import java.net.URL;
 
 public class BrowserstackDriver implements WebDriverProvider {
 
-    @Override
-    public WebDriver createDriver(Capabilities capabilities) {
-        MutableCapabilities mutableCapabilities = new MutableCapabilities();
-        mutableCapabilities.merge(capabilities);
-
-        mutableCapabilities.setCapability("browserstack.appium_version", OwnerConfig.config.appiumVersion());
-        mutableCapabilities.setCapability("browserstack.user", OwnerConfig.config.user());
-        mutableCapabilities.setCapability("browserstack.key", OwnerConfig.config.key());
-        mutableCapabilities.setCapability("app", OwnerConfig.config.app());
-        mutableCapabilities.setCapability("device", OwnerConfig.config.deviceName());
-        mutableCapabilities.setCapability("os_version", OwnerConfig.config.platformVersion());
-        mutableCapabilities.setCapability("project", OwnerConfig.config.projectName());
-        mutableCapabilities.setCapability("build", OwnerConfig.config.buildName());
-        mutableCapabilities.setCapability("name", OwnerConfig.config.testName());
-
-        return new RemoteWebDriver(getBrowserstackUrl(), mutableCapabilities);
-    }
-
     public static URL getBrowserstackUrl() {
         try {
-            return new URL(OwnerConfig.config.url());
+            return new URL("http://hub.browserstack.com/wd/hub");
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         }
+    }
+//    @Override
+//    public WebDriver createDriver(Capabilities caps) {
+//
+//        // Set your access credentials
+//        caps.setCapability("browserstack.user", "tatianacheb_71ptxZ");
+//        caps.setCapability("browserstack.key", "DFyfUSBrCigWBM9ogcxs");
+//
+//        // Set URL of the application under test
+//        caps.setCapability("app", "DFyfUSBrCigWBM9ogcxs");
+//
+//        // Specify device and os_version for testing
+//        caps.setCapability("device", "Google Pixel 3");
+//        caps.setCapability("os_version", "9.0");
+//
+//        // Set other BrowserStack capabilities
+//        caps.setCapability("project", "Second Java Project");
+//        caps.setCapability("build", "browserstack-build-1");
+//        caps.setCapability("name", "test_new_app_wiki");
+//
+//
+//        return new AndroidDriver(getBrowserstackUrl(), caps);
+//    }
+
+    @Override
+    public WebDriver createDriver(Capabilities capabilities) {
+        MutableCapabilities mutableCapabilities = new MutableCapabilities();
+//        mutableCapabilities.merge(capabilities);
+//        mutableCapabilities.setCapability("browserstack.appium_version", Credentials.configBrowserstack.appiumVersion());
+        mutableCapabilities.setCapability("user", "tatianacheb_71ptxZ");
+        mutableCapabilities.setCapability("key", "DFyfUSBrCigWBM9ogcxs");
+        mutableCapabilities.setCapability("app", "bs://b4f0d760d412ee47f036323fb433943485d2a130");
+//        mutableCapabilities.setCapability("browserstack.user", Credentials.configBrowserstack.user());
+//        mutableCapabilities.setCapability("browserstack.key", Credentials.configBrowserstack.key());
+//        mutableCapabilities.setCapability("app", Credentials.configBrowserstack.app());
+        mutableCapabilities.setCapability("device", Credentials.configBrowserstack.deviceName());
+        mutableCapabilities.setCapability("platform", Credentials.configBrowserstack.platformName());
+        mutableCapabilities.setCapability("os_version", Credentials.configBrowserstack.platformVersion());
+        mutableCapabilities.setCapability("project", Credentials.configBrowserstack.projectName());
+        mutableCapabilities.setCapability("build", Credentials.configBrowserstack.buildName());
+        mutableCapabilities.setCapability("testname", Credentials.configBrowserstack.testName());
+
+        return new RemoteWebDriver(getBrowserstackUrl(), mutableCapabilities);
     }
 
 }
