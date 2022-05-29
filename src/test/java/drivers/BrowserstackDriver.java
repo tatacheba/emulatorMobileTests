@@ -47,18 +47,18 @@ public class BrowserstackDriver implements WebDriverProvider {
         MutableCapabilities mutableCapabilities = new MutableCapabilities();
 //        mutableCapabilities.merge(capabilities);
 //        mutableCapabilities.setCapability("browserstack.appium_version", Credentials.configBrowserstack.appiumVersion());
-        mutableCapabilities.setCapability("user", "tatianacheb_71ptxZ");
-        mutableCapabilities.setCapability("key", "DFyfUSBrCigWBM9ogcxs");
-        mutableCapabilities.setCapability("app", "bs://b4f0d760d412ee47f036323fb433943485d2a130");
+        mutableCapabilities.setCapability("browserstack.user", "tatianacheb_71ptxZ");
+        mutableCapabilities.setCapability("browserstack.key", "DFyfUSBrCigWBM9ogcxs");
+        mutableCapabilities.setCapability("browserstack.app", "bs://b4f0d760d412ee47f036323fb433943485d2a130");
 //        mutableCapabilities.setCapability("browserstack.user", Credentials.configBrowserstack.user());
 //        mutableCapabilities.setCapability("browserstack.key", Credentials.configBrowserstack.key());
 //        mutableCapabilities.setCapability("app", Credentials.configBrowserstack.app());
-        mutableCapabilities.setCapability("device", Credentials.configBrowserstack.deviceName());
-        mutableCapabilities.setCapability("platform", Credentials.configBrowserstack.platformName());
-        mutableCapabilities.setCapability("os_version", Credentials.configBrowserstack.platformVersion());
-        mutableCapabilities.setCapability("project", Credentials.configBrowserstack.projectName());
-        mutableCapabilities.setCapability("build", Credentials.configBrowserstack.buildName());
-        mutableCapabilities.setCapability("testname", Credentials.configBrowserstack.testName());
+        mutableCapabilities.setCapability("browserstack.deviceName", Credentials.configBrowserstack.deviceName());
+        mutableCapabilities.setCapability("browserstack.platformName", Credentials.configBrowserstack.platformName());
+        mutableCapabilities.setCapability("browserstack.platformVersion", Credentials.configBrowserstack.platformVersion());
+        mutableCapabilities.setCapability("browserstack.projectName", Credentials.configBrowserstack.projectName());
+        mutableCapabilities.setCapability("browserstack.buildName", Credentials.configBrowserstack.buildName());
+        mutableCapabilities.setCapability("browserstack.testName", Credentials.configBrowserstack.testName());
 
         return new RemoteWebDriver(getBrowserstackUrl(), mutableCapabilities);
     }
