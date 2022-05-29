@@ -8,7 +8,6 @@ public class Browserstack {
 
     public static String videoUrl(String sessionId) {
 
-
         return given()
                 .auth().basic(Credentials.configBrowserstack.user(), Credentials.configBrowserstack.key())
                 .when()
