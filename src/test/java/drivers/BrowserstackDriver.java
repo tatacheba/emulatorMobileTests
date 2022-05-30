@@ -53,12 +53,12 @@ public class BrowserstackDriver implements WebDriverProvider {
 //        mutableCapabilities.setCapability("browserstack.user", Credentials.configBrowserstack.user());
 //        mutableCapabilities.setCapability("browserstack.key", Credentials.configBrowserstack.key());
 //        mutableCapabilities.setCapability("app", Credentials.configBrowserstack.app());
-        mutableCapabilities.setCapability("device", Credentials.configBrowserstack.deviceName());
-        mutableCapabilities.setCapability("platform", Credentials.configBrowserstack.platformName());
-        mutableCapabilities.setCapability("os_version", Credentials.configBrowserstack.platformVersion());
-        mutableCapabilities.setCapability("project", Credentials.configBrowserstack.projectName());
-        mutableCapabilities.setCapability("build", Credentials.configBrowserstack.buildName());
-        mutableCapabilities.setCapability("testname", Credentials.configBrowserstack.testName());
+        mutableCapabilities.setCapability("deviceName", Credentials.configBrowserstack.deviceName());
+        mutableCapabilities.setCapability("platformName", Credentials.configBrowserstack.platformName());
+        mutableCapabilities.setCapability("platformVersion", Credentials.configBrowserstack.platformVersion());
+        mutableCapabilities.setCapability("projectName", Credentials.configBrowserstack.projectName());
+        mutableCapabilities.setCapability("buildName", Credentials.configBrowserstack.buildName());
+        mutableCapabilities.setCapability("testName", Credentials.configBrowserstack.testName());
 
         return new RemoteWebDriver(getBrowserstackUrl(), mutableCapabilities);
     }

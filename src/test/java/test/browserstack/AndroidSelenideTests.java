@@ -18,7 +18,7 @@ public class AndroidSelenideTests extends TestBase {
         );
         step("Type search", () -> {
             $(AppiumBy.accessibilityId("Search Wikipedia")).click();
-            $(AppiumBy.id("org.wikipedia.alpha:id/search_src_text")).setValue("BrowserStack");
+            $(AppiumBy.accessibilityId("org.wikipedia.alpha:id/search_src_text")).setValue("BrowserStack");
         });
         step("Verify content found", () ->
                 $$(byClassName("android.widget.TextView")).shouldHave(sizeGreaterThan(0)));
