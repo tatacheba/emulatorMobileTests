@@ -22,7 +22,7 @@ public class BrowserstackMobileDriver implements WebDriverProvider {
         mutableCapabilities.setCapability("app", Credentials.config.app());
         mutableCapabilities.setCapability("device", "Samsung Galaxy A10");
         mutableCapabilities.setCapability("os_version", "9.0");
-        mutableCapabilities.setCapability("project", "QA.GURU lesson MobileAutotests");
+        mutableCapabilities.setCapability("project", "Wikipedia App MobileAutotests");
         mutableCapabilities.setCapability("build", "Autotests browserstack");
         mutableCapabilities.setCapability("name", "Test Wikipedia App");
 

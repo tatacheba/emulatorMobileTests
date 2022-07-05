@@ -31,11 +31,11 @@ bin/
 out/
 logs/
 target/
-resources/
+#resources/
 .classpath
 .project
 .settings/org.eclipse.buildship.core.prefs
 .vscode
 /gradlew
 /gradlew.bat
-*.properties
+#*.properties

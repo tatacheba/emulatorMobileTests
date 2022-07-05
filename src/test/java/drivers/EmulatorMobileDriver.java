@@ -37,6 +37,7 @@ public class EmulatorMobileDriver implements WebDriverProvider {
 //
         return new AndroidDriver(getAppiumServerUrl(), options);
     }
+
     private File getApp() {
         String appPath = "src/test/resources/apk/app-alpha-universal-release.apk";
         String appUrl = "https://github.com/wikimedia/apps-android-wikipedia/" +
