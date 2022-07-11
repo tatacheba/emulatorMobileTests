@@ -14,24 +14,23 @@ public class BrowserstackMobileDriver implements WebDriverProvider {
 
     @Override
     public WebDriver createDriver(Capabilities capabilities) {
-        MutableCapabilities mutableCapabilities = new MutableCapabilities();
-        mutableCapabilities.merge(capabilities);
-        mutableCapabilities.setCapability("browserstack.appium_version", Credentials.config.appiumVersion());
-        mutableCapabilities.setCapability("browserstack.user", Credentials.config.user());
-        mutableCapabilities.setCapability("browserstack.key", Credentials.config.key());
-        mutableCapabilities.setCapability("app", Credentials.config.app());
-        mutableCapabilities.setCapability("device", "Samsung Galaxy A10");
-        mutableCapabilities.setCapability("os_version", "9.0");
-        mutableCapabilities.setCapability("project", "Wikipedia App MobileAutotests");
-        mutableCapabilities.setCapability("build", "Autotests browserstack");
-        mutableCapabilities.setCapability("name", "Test Wikipedia App");
+        MutableCapabilities mutableCap = new MutableCapabilities();
+        mutableCap.merge(capabilities);
+        mutableCap.setCapability("browserstack.user", Credentials.browserstackConfig.user());
+        mutableCap.setCapability("browserstack.key", Credentials.browserstackConfig.key());
+        mutableCap.setCapability("app", Credentials.browserstackConfig.app());
+        mutableCap.setCapability("device", "Samsung Galaxy A10");
+        mutableCap.setCapability("os_version", "9.0");
+        mutableCap.setCapability("project", "Wikipedia App MobileAutotests");
+        mutableCap.setCapability("build", "Autotests browserstack");
+        mutableCap.setCapability("name", "Test Wikipedia App");
 
-        return new RemoteWebDriver(getBrowserstackUrl(), mutableCapabilities);
+        return new RemoteWebDriver(getBrowserstackUrl(), mutableCap);
     }
 
     public static URL getBrowserstackUrl() {
         try {
-            return new URL(Credentials.config.url());
+            return new URL(Credentials.browserstackConfig.url());
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         }

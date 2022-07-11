@@ -25,23 +25,20 @@ public class EmulatorMobileDriver implements WebDriverProvider {
         UiAutomator2Options options = new UiAutomator2Options();
         options.merge(capabilities);
         options.setAutomationName(AutomationName.ANDROID_UIAUTOMATOR2);
-        options.setPlatformName(Credentials.config.platformName());
-        options.setDeviceName(Credentials.deviceTest());
-//        options.setPlatformVersion("11.0");
-        options.setLanguage("en");
-        options.setLocale("en");
         options.setApp(app.getAbsolutePath());
-//        Явное описание пакета и Активности
-        options.setAppPackage(Credentials.config.appPackage());
-        options.setAppActivity(Credentials.config.appActivity());
-//
+        options.setPlatformName(Credentials.emulatorConfig.platformName());
+        options.setDeviceName(Credentials.emulatorConfig.deviceName());
+        options.setPlatformVersion(Credentials.emulatorConfig.platformVersion());
+        options.setAppPackage("org.wikipedia.alpha");
+        options.setAppActivity("org.wikipedia.main.MainActivity");
+
+
         return new AndroidDriver(getAppiumServerUrl(), options);
     }
 
     private File getApp() {
         String appPath = "src/test/resources/apk/app-alpha-universal-release.apk";
-        String appUrl = "https://github.com/wikimedia/apps-android-wikipedia/" +
-                "releases/download/latest/app-alpha-universal-release.apk?raw=true";
+        String appUrl = Credentials.emulatorConfig.appUrl();
         File app = new File(appPath);
         if (!app.exists()) {
             String url = appUrl;
@@ -56,7 +53,7 @@ public class EmulatorMobileDriver implements WebDriverProvider {
 
     public static URL getAppiumServerUrl() {
         try {
-            return new URL("http://localhost:4723/wd/hub");
+            return new URL(Credentials.emulatorConfig.urlLocalHost());
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         }

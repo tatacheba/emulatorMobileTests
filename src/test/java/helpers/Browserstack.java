@@ -11,12 +11,10 @@ public class Browserstack {
         String url = format("https://api-cloud.browserstack.com/app-automate/sessions/%s.json", sessionId);
 
         return given()
-                .auth().basic(Credentials.config.user(), Credentials.config.key())
-                .log().all()
+                .auth().basic(Credentials.browserstackConfig.user(), Credentials.browserstackConfig.key())
                 .when()
                 .get(url)
                 .then()
-                .log().all()
                 .statusCode(200)
                 .extract()
                 .path("automation_session.video_url");
