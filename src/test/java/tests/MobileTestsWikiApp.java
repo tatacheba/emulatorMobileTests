@@ -41,7 +41,7 @@ public class MobileTestsWikiApp extends TestBase {
     @Owner("TataCheba")
     @Test
     @DisplayName("Trying to find information about some interesting persons.")
-    void searchTes1t() {
+    void searchTest() {
         step("Looking for Chris Evans", () -> {
             $(AppiumBy.id("org.wikipedia.alpha:id/fragment_onboarding_skip_button")).click();
             $(AppiumBy.accessibilityId("Search Wikipedia")).click();
