@@ -3,11 +3,12 @@
 ## 📃 Content:
 
 -   [Technologies and tools](#tehnologist)
--   [Verified checks](#Verified_checks)
+-   [Verified checks](#verified)
 -   [Run tests from the terminal](#computer)
 -   [Running Tests in Jenkins](#running_tests)
--   [Отчет в Allure report](#report_allure_report)
--   [Отчет в Telegram](#notifications_telegram_bot)
+-   [Report on test results in Allure Report](#report_allure_report)
+-   [Notifications in Telegram using a bot](#notifications_telegram_bot)
+-   [Testvideo](#testvideo)
 
 ## <a name="technologist"> Technologies and tools</a>
 
@@ -50,7 +51,7 @@ Running in Browserstack:
 gradle clean test -Ddevice=browserstack
 ```
 
-## <img width="4%" title="Jenkins" src="images/logo/Jenkins.svg"><a name="running_tests">Running Tests in [Jenkins](https://jenkins.autotests.cloud/job/tatacheba_qaguru_11_for_interview)</a>
+## <a name="running_tests">Running Tests in [Jenkins](https://jenkins.autotests.cloud/job/tatacheba_qaguru_11_for_interview)</a>
 
 <p align="center">
 <a href="https://jenkins.autotests.cloud/job/tatacheba_qaguru_11_22_mobileTestEmulation/"><img src="image/screenshots/jenkins-dashboard.png" alt="Jenkins"/></a>
@@ -60,7 +61,7 @@ gradle clean test -Ddevice=browserstack
 
 -   The assembly can be run through Browserstack, Appium, and a real connected phone.
 
-## <img src="image/logo/Allure_Report.svg" width="25" height="25"  alt="Allure"/></a> Отчет в <a target="_blank" href="https://jenkins.autotests.cloud/job/C11-eisritter-unit13-homework/allure">Allure report</a>
+## <a name="report_allure_report"> Report on test results in <a target="_blank" href="https://jenkins.autotests.cloud/job/tatacheba_qaguru_11_for_interview/allure">Allure report</a>
 
 ### Main
 
@@ -74,13 +75,13 @@ gradle clean test -Ddevice=browserstack
 <img title="Allure Tests" src="image/screenshots/allure-test-page.png">
 </p>
 
-## <img src="images/logo/Telegram.svg" width="25" height="25"/> <a name="notifications_telegram_bot">Notifications in Telegram using a bot</a>
+## <a name="notifications_telegram_bot">Notifications in Telegram using a bot</a>
 
 <p align="center">
 <img title="Telegram bot" src="image/screenshots/telegram_bot.png" >
 </p>
 
-## <img src="image/logo/Selenoid.svg" width="25" height="25"  alt="Allure"/></a> Video example of passing the test
+## <a name="testvideo"> Video example of passing the test
 
 <p align="center">
 <img title="Selenoid Video" src="image/gif/testvideo.gif" alt="video"> 
