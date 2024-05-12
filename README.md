@@ -1,16 +1,16 @@
-# Проект по автоматизации тестирования для мобильного приложения Wikipedia
+# Test automation project for Wikipedia mobile application
 
-## 📃 Содержание:
+## 📃 Content:
 
-- [Технологии и инструменты](#computer-технологии-и-инструменты)
-- [Реализованные проверки](#boom-Реализованные-проверки)
-- [Сборка в Jenkins](#-сборка-в-jenkins)
-- [Запуск из терминала](#computer-Запуск-тестов-из-терминала)
-- [Отчет в Allure report](#-отчет-в-allure-report)
-- [Отчет в Telegram](#-уведомление-в-telegram-при-помощи-бота)
-- [Видео пример прохождения тестов](#-видео-пример-прохождения-теста)
+-   [Technologies and tools](#tehnologist)
+-   [Verified checks](#Verified_checks)
+-   [Run tests from the terminal](#computer)
+-   [Running Tests in Jenkins](#running_tests)
+-   [Отчет в Allure report](#report_allure_report)
+-   [Отчет в Telegram](#notifications_telegram_bot)
 
-## :computer: Технологии и инструменты
+## <a name="technologist"> Technologies and tools</a>
+
 <p align="center">
 <img width="6%" title="IntelliJ IDEA" src="image/logo/Intelij_IDEA.svg">
 <img width="6%" title="Java" src="image/logo/Java.svg">
@@ -26,57 +26,62 @@
 <img width="6%" title="Browserstack" src="image/logo/Browserstack.svg">
 </p>
 
-## :boom: Реализованные проверки
+## <a name="verified">Verified checks</a>
 
-- Проверка стартовых экранов и поиска в приложении
+-   Check launch screens and search in the app
 
-## <img src="image/logo/Jenkins.svg" width="25" height="25"  alt="Jenkins"/></a> Сборка в Jenkins
-<a target="_blank" href="https://jenkins.autotests.cloud/job/C11-eisritter-mobile/">Jenkins job</a>
+## <a name="computer">Run tests from the terminal</a>
+
+Local start on emulator:
+
+```
+gradle clean test -Ddevice=emulator
+```
+
+Local startup on a real device:
+
+```
+gradle clean test -Ddevice=real
+```
+
+Running in Browserstack:
+
+```
+gradle clean test -Ddevice=browserstack
+```
+
+## <img width="4%" title="Jenkins" src="images/logo/Jenkins.svg"><a name="running_tests">Running Tests in [Jenkins](https://jenkins.autotests.cloud/job/tatacheba_qaguru_11_for_interview)</a>
+
 <p align="center">
 <a href="https://jenkins.autotests.cloud/job/tatacheba_qaguru_11_22_mobileTestEmulation/"><img src="image/screenshots/jenkins-dashboard.png" alt="Jenkins"/></a>
 </p>
 
-### :maple_leaf: Особенности сборки в Jenkins:
+### Build features in Jenkins:
 
-- Сборку можно запустить как через сервис Browserstack так и через Appium и с помощью реального подключенного телефона.
+-   The assembly can be run through Browserstack, Appium, and a real connected phone.
 
-## :computer: Запуск тестов из терминала
-
-Локальный запуск на эмуляторе:
-```
-gradle clean test -Ddevice=emulator
-```
-Локальный запуск на реальном устройстве:
-```
-gradle clean test -Ddevice=real 
-```
-Запуск в Browserstack:
-```
-gradle clean test -Ddevice=browserstack
-```
 ## <img src="image/logo/Allure_Report.svg" width="25" height="25"  alt="Allure"/></a> Отчет в <a target="_blank" href="https://jenkins.autotests.cloud/job/C11-eisritter-unit13-homework/allure">Allure report</a>
 
-### :lady_beetle: Основное окно
+### Main
 
 <p align="center">
 <img title="Allure Overview Dashboard" src="image/screenshots/allure-main-page.png">
 </p>
 
-### :cherries: Тесты
+### Tests
 
 <p align="center">
 <img title="Allure Tests" src="image/screenshots/allure-test-page.png">
 </p>
 
-## <img src="image/logo/Telegram.svg" width="25" height="25"  alt="Allure"/></a> Уведомление в Telegram при помощи бота
+## <img src="images/logo/Telegram.svg" width="25" height="25"/> <a name="notifications_telegram_bot">Notifications in Telegram using a bot</a>
 
 <p align="center">
 <img title="Telegram bot" src="image/screenshots/telegram_bot.png" >
 </p>
 
-## <img src="image/logo/Selenoid.svg" width="25" height="25"  alt="Allure"/></a> Видео пример прохождения теста
+## <img src="image/logo/Selenoid.svg" width="25" height="25"  alt="Allure"/></a> Video example of passing the test
 
 <p align="center">
 <img title="Selenoid Video" src="image/gif/testvideo.gif" alt="video"> 
 </p>
-
