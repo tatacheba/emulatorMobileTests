@@ -51,7 +51,7 @@ Running in Browserstack:
 gradle clean test -Ddevice=browserstack
 ```
 
-## <a name="running_tests">Running Tests in [Jenkins](https://jenkins.autotests.cloud/job/tatacheba_qaguru_11_for_interview)</a>
+## <a name="running_tests">Running Tests in Jenkins</a>
 
 <p align="center">
 <a href="https://jenkins.autotests.cloud/job/tatacheba_qaguru_11_22_mobileTestEmulation/"><img src="image/screenshots/jenkins-dashboard.png" alt="Jenkins"/></a>
@@ -61,7 +61,7 @@ gradle clean test -Ddevice=browserstack
 
 -   The assembly can be run through Browserstack, Appium, and a real connected phone.
 
-## <a name="report_allure_report"> Report on test results in <a target="_blank" href="https://jenkins.autotests.cloud/job/tatacheba_qaguru_11_for_interview/allure">Allure report</a>
+## <a name="report_allure_report"> Report on test results in Allure report</a>
 
 ### Main
 
